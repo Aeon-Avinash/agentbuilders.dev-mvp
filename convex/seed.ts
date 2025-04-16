@@ -1,6 +1,5 @@
 import { mutation } from "./_generated/server";
 import { v } from "convex/values";
-import { Id } from "../_generated/dataModel";
 
 /**
  * Seeds the database with initial categories and sample frameworks
@@ -27,7 +26,7 @@ export const seedDatabase = mutation({
     }
     
     // Seed categories
-    const categoryIds: Record<string, Id<"categories">> = {};
+    const categoryIds: Record<string, Doc<"categories">> = {};
     
     const categories = [
       {

@@ -1,6 +1,5 @@
 import { internalMutation, internalQuery, internalAction } from "./_generated/server";
 import { v } from "convex/values";
-import { Id } from "../_generated/dataModel";
 import { fetchRepositoryData } from "./lib/github";
 import { fetchDownloadStats as fetchPypiDownloadStats } from "./lib/pypi";
 import { fetchDownloadStats as fetchNpmDownloadStats } from "./lib/npm";

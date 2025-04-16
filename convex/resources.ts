@@ -1,7 +1,6 @@
 import { query, mutation } from "./_generated/server";
 import { paginationOptsValidator } from "convex/server";
 import { v } from "convex/values";
-import { Id } from "../_generated/dataModel";
 
 /**
  * List all resources with optional filtering by framework or type

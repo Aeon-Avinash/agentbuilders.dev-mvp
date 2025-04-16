@@ -16,6 +16,7 @@ import type {
 import type * as categories from "../categories.js";
 import type * as crons from "../crons.js";
 import type * as frameworks from "../frameworks.js";
+import type * as importData from "../importData.js";
 import type * as lib_github from "../lib/github.js";
 import type * as lib_npm from "../lib/npm.js";
 import type * as lib_pypi from "../lib/pypi.js";
@@ -38,6 +39,7 @@ declare const fullApi: ApiFromModules<{
   categories: typeof categories;
   crons: typeof crons;
   frameworks: typeof frameworks;
+  importData: typeof importData;
   "lib/github": typeof lib_github;
   "lib/npm": typeof lib_npm;
   "lib/pypi": typeof lib_pypi;

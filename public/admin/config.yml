@@ -1,6 +1,9 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
+
+# For local development without authentication
+local_backend: true
 
 # Publish mode option:
 # - editorial: All content must go through review before published
