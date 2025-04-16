@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "codegen": {
+      "enabled": true,
+      "outputTypesFilename": "types.d.ts",
+      "path": "convex/_generated/api.ts"
+    }
+  }
+}

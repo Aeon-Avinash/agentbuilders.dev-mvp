@@ -1,0 +1,35 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t bg-background py-6 md:py-8">
+  <div class="container flex flex-col items-center justify-between gap-4 md:flex-row">
+    <div class="flex flex-col items-center gap-4 md:items-start">
+      <div class="text-center md:text-left">
+        <p class="text-sm text-muted-foreground">
+          &copy; {currentYear} Agentbuilders.dev. All rights reserved.
+        </p>
+      </div>
+    </div>
+    <nav class="flex gap-4 sm:gap-6">
+      <a 
+        href="/terms" 
+        class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Terms
+      </a>
+      <a 
+        href="/privacy" 
+        class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Privacy
+      </a>
+      <a 
+        href="/submit" 
+        class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Submit a Framework
+      </a>
+    </nav>
+  </div>
+</footer>

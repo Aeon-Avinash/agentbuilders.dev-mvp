@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# Publish mode option:
+# - editorial: All content must go through review before published
+# - simple: All content is published immediately
+publish_mode: editorial_workflow
+
+media_folder: "public/images/uploads" # Media files will be stored here
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with this
+
+# Content Collections
+collections:
+  - name: "resources"
+    label: "Resources"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - {
+          label: "Resource Type",
+          name: "type",
+          widget: "select",
+          options: ["tutorial", "article", "documentation", "video", "tool", "other"],
+        }
+      - {
+          label: "Related Framework",
+          name: "frameworkId",
+          widget: "string",
+          required: false,
+          hint: "Framework ID in the database (if resource is related to a specific framework)",
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+  
+  - name: "glossary"
+    label: "Glossary"
+    folder: "content/glossary"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Term", name: "title", widget: "string" }
+      - { label: "Definition", name: "definition", widget: "string" }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Related Terms", name: "relatedTerms", widget: "list", required: false }

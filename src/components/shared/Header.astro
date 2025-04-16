@@ -1,0 +1,40 @@
+---
+import ThemeToggle from './ThemeToggle';
+---
+
+<header class="sticky top-0 z-40 w-full border-b bg-background">
+  <div class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+    <div class="flex gap-6 md:gap-10">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="inline-block font-bold text-xl">
+          Agentbuilders.dev
+        </span>
+      </a>
+
+      <nav class="flex gap-6">
+        <a href="/" class="flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground">
+          Home
+        </a>
+        <a href="/frameworks" class="flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground">
+          Frameworks
+        </a>
+        <a href="/resources" class="flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground">
+          Resources
+        </a>
+        <a href="/about" class="flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground">
+          About
+        </a>
+      </nav>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end space-x-4">
+      <nav class="flex items-center space-x-2">
+        <ThemeToggle client:load />
+        
+        <a href="/auth/signin" class="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground">
+          Sign In
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

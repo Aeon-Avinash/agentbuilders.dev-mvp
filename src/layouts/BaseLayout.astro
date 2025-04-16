@@ -1,0 +1,65 @@
+---
+import Header from '@/components/shared/Header.astro';
+import Footer from '@/components/shared/Footer.astro';
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Discover and compare AI agent development frameworks" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Agentbuilders.dev</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | Agentbuilders.dev`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Agentbuilders.dev" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Agentbuilders.dev`} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      // Check for user's preferred theme
+      const setTheme = () => {
+        const theme = localStorage.getItem('theme') || 'system';
+        if (
+          theme === 'dark' || 
+          (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+
+      // Set theme initially
+      setTheme();
+      
+      // Listen for changes to system preferences
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
+      
+      // Listen for storage changes (from other tabs)
+      window.addEventListener('storage', () => setTheme());
+    </script>
+  </body>
+</html>
